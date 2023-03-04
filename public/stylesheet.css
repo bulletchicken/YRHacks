@@ -1,5 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+:root{
+    --mainblue: #3182ff;
+    --beige: #f6f0e8;
+}
+
 body{
-    background-color:  #f6f0e8;
+    background-color:  var(--beige);
     height:100vh;
     display:inline-flexbox;
     border: 50px solid lightgrey;
@@ -19,6 +27,14 @@ body{
     background-color: darkgrey;
     transform: translateX(5px);
 
+}
+
+.camon_circle{
+    height: 10px;
+    width: 10px;
+    background-color: red;
+    border-radius: 50%;
+    transform: translateX(-15px) translateY(5px);
 }
 
 .camera{
@@ -45,36 +61,63 @@ nav{
     place-items: right;
     text-align: right;
     color:black;
+    font-family: Quicksand;
     font-size: 200%;
     text-decoration: none;
-    transition: all 0.3s ease 0s;
+
+    background-image: linear-gradient(
+        to right,
+        var(--mainblue),
+        var(--mainblue) 50%,
+        black 50%
+    );
+
+    background-size: 200% 100%;
+    background-position: -100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
 }
 
-.nav_links :hover{
-    color: white;
+.nav_links a:before{
+    content: '';
+    background: var(--mainblue);
+    display: block;
+    position: absolute;
+
+}
+
+.nav_links a:hover{
+    background-position: 0;
+}
+
+.nav_links a:hover::before{
+    width:100%;
 }
 
 .title{
+    font-family: Nunito;
     box-sizing: content-box;
     color: black;
     height:70px;
-    font-size: 300%;
+    font-size: 600%;
     display:flex;
     place-items: center;
-    transform: translateX(35vw) translateY(20vh);
+    transform: translateX(20vw) translateY(30vh);
 }
 
 .rotating{
-    color: #3182ff;
+    color: var(--mainblue);
     overflow:hidden;
-    height: 50px;
+    height: 120px;
 
 }
 
 span{
     display: block;
     height:100%;
-    padding-left: 10px;
+    padding-left: 20px;
+    /*border: darkorange solid 1px;*/
     animation: rotate 6s infinite;
 }
 
@@ -96,7 +139,7 @@ span{
     }
 
     60%{
-        transform: translateY(-212%);
+        transform: translateY(-112%);
     }
 
     75%{
@@ -122,9 +165,44 @@ span{
 .dropdown:hover .dropdown-links {
     display: block;
     transform: translateX(50%);
-    background: #f9f9f9;
+    background: lightgrey;
+    border-radius: 10%;
 }
 
 .dd{
     display:flex;
+}
+
+.floaters{
+    position:absolute;
+}
+
+.dumbell{
+    transform: translateY(-60%) translateX(20%) rotate(340deg);
+    width: 17%;
+    height: 17%;
+}
+
+.foamroller{
+    transform: translateY(140%) translateX(550%) rotate(350deg);
+    width: 11%;
+    height: 11%;
+}
+
+.kettlebell{
+    transform: translateY(-20%) translateX(500%) rotate(340deg);
+    width: 11%;
+    height: 11%;
+}
+
+.resistanceband{
+    transform: translateY(500%) translateX(100%) rotate(45deg);
+    width: 11%;
+    height: 11%;
+}
+
+.yogaball{
+    transform: translateY(200%) translateX(-300%) rotate(20deg);
+    width: 11%;
+    height: 11%;
 }
