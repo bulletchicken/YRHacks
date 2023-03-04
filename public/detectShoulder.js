@@ -24,7 +24,7 @@ function leftScore() {
         leftPeak = leftROM[i];
         document.getElementById('high').innerHTML = leftPeak;
     }
-    i+=2;
+    i++;
     console.log(leftPeak);
     return leftROM[i];
     
@@ -35,7 +35,7 @@ function rightScore() {
         rightPeak = rightROM[i];
         document.getElementById('high').innerHTML = rightPeak;
     }
-    i+=2;
+    i++;
     return rightROM[i];
    
 }
