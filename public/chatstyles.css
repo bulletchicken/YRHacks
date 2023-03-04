@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
 
 :root {
-	--mainblue: #3182ff;
-	--secondblue: #488cf1;
+	--mainblue: #accdff;
+	--secondblue: #accdff;
 	--light-color: #e6e9ff;
-	--beige: #f6f0e8;
+	--beige: #f6f3e7;
 	--success-color: #5cb85c;
 	--error-color: #d9534f;
 }
@@ -34,6 +36,7 @@ a {
 	color: var(--mainblue);
 	border: 0;
 	font-size: 17px;
+	border-radius: 25px;
 }
 
 /* CAMERA ICON */
@@ -169,7 +172,7 @@ nav{
 }
 
 .chat-main {
-	background-color: #777;
+	background-color: var(--beige);
 	display: grid;
 	grid-template-columns: 1fr 3fr;
 	height: 70vh + 80px;
@@ -183,6 +186,7 @@ nav{
 	padding: 20px 20px 60px;
 	overflow-y: scroll;
 	z-index: 0;
+
 }
 
 .chat-sidebar h2 {
@@ -209,8 +213,8 @@ nav{
 .chat-messages .message {
 	padding: 10px;
 	margin-bottom: 15px;
-	background-color: var(--beige);
-	border-radius: 5px;
+	background-color: white;
+	border-radius: 30px;
 }
 
 .chat-messages .message .meta {
@@ -226,12 +230,15 @@ nav{
 }
 
 .chat-form-container {
-	padding: 20px 30px;
+
+	padding: 20px 280px;
 	background-color: var(--mainblue);
+	border-radius: 25px;
 }
 
 .chat-form-container form {
 	display: flex;
+	border-radius: 25px;
 }
 
 .chat-form-container input[type='text'] {
@@ -239,4 +246,6 @@ nav{
 	padding: 5px;
 	height: 40px;
 	flex: 1;
+	border-radius: 25px;
+	margin-left: 100px;
 }

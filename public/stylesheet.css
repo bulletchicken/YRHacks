@@ -188,31 +188,36 @@ span{
 }
 
 .dumbell{
-    transform: translateY(-60%) translateX(20%) rotate(340deg);
-    width: 17%;
-    height: 17%;
+    transform: translateY(-20%) translateX(100%) rotate(340deg);
+    width: 13%;
+    height: 13%;
 }
 
 .foamroller{
-    transform: translateY(140%) translateX(550%) rotate(350deg);
+    transform: translateY(140%) translateX(600%) rotate(0deg);
     width: 11%;
     height: 11%;
 }
 
 .kettlebell{
-    transform: translateY(-20%) translateX(500%) rotate(340deg);
+    transform: translateY(-20%) translateX(450%) rotate(-340deg);
     width: 11%;
     height: 11%;
 }
 
 .resistanceband{
-    transform: translateY(500%) translateX(100%) rotate(45deg);
-    width: 11%;
-    height: 11%;
+    transform: translateY(350%) translateX(35%) rotate(45deg);
+    width: 14%;
+    height: 14%;
 }
 
 .yogaball{
-    transform: translateY(200%) translateX(-300%) rotate(20deg);
-    width: 11%;
-    height: 11%;
+    transform: translateY(180%) translateX(-350%) rotate(20deg);
+    width: 12%;
+    height: 12%;
+}
+.logo{
+    transform: translateY(-110%) translateX(-670%);
+    width: 9%;
+    height: 9%;
 }

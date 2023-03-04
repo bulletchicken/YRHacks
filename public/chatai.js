@@ -1,7 +1,7 @@
 const socket = io();
 
 const openaiEndpoint = 'https://api.openai.com/v1/chat/completions';
-const openaiApiKey = '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';
+const openaiApiKey = '';
 
 const chatForm = document.getElementById('chat-form')
 const chatMessages = document.querySelector('.chat-messages');
