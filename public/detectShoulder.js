@@ -9,32 +9,59 @@ let pose,skeleton;
 let actor_img;
 let specs,smoke;
 
+let leftROM = []
+let rightROM = []
 
+let leftPeak = 0;
+let rightPeak = 0;
+let i = 0;
+let score;
 
-var xValues = [100,200,300,400,500,600,700,800,900,1000];
+function leftScore() {
+    if(leftROM[i]>leftPeak){
+        leftPeak = leftROM[i];
+    }
+    i+=2;
+    console.log(leftPeak);
+    return leftROM[i];
+    
+}
 
-new Chart("myChart", {
-  type: "line",
-  data: {
-    labels: xValues,
-    datasets: [{
-      data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
-      borderColor: "red",
-      fill: false
-    },{
-      data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,7000],
-      borderColor: "green",
-      fill: false
-    },{
-      data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
-      borderColor: "blue",
-      fill: false
-    }]
-  },
-  options: {
-    legend: {display: false}
-  }
-});
+function rightScore() {
+    if(rightROM[i]>rightPeak){
+        rightPeak = rightROM[i];
+    }
+    i++;
+    return rightROM[i];
+   
+}
+
+/*
+Plotly.plot('chart', [{
+    y: [leftScore()],
+    type: 'line',
+
+}]);
+
+*/
+Plotly.plot('chart', [{
+    y: [rightScore()],
+    type: 'line',
+
+}, {
+    y: [leftScore()],
+    type: 'line',
+}]);
+
+setInterval(function(){
+    console.log(score);
+    Plotly.extendTraces('chart', { 
+        y:[[rightScore()]]
+    }, [0]);
+    Plotly.extendTraces('chart', {
+        y:[[leftScore()]]
+    }, [1])
+},200);
 
 
 let target = document.getElementById('') 
@@ -43,14 +70,18 @@ let activityLeft = [0];
 let activityRight = [0];
 
 function setup() {
-
     var canvas = createCanvas(900, 500);
     my_cam = createCapture(VIDEO)
     
     my_cam.size(900, 500)
     my_cam.hide();
-    posenet = ml5.poseNet(my_cam, modelLoaded);
+    posenet = ml5.poseNet(my_cam,{ detectionInterval: 200 }, modelLoaded);
     posenet.on('pose',receivedPoses);
+
+    
+    //document.body.innerHTML += '<div id="chart"></div>'; // the += means we add this to the inner HTML of body
+    //document.getElementById('someBox').innerHTML = '<canvas id="someId"></canvas>'; // replaces the inner HTML of #someBox to a canvas
+
 }
 
 
@@ -86,18 +117,20 @@ function receivedPoses(poses){
     //left arm.y - min is the distance of the arm to the 
     if(leftarm.y<min){
         //if activity is found, update graph
-        console.log('hit');
-        // -min for vertical adjnustment
-        const score = ((((range-(leftarm.y-min))/range)-1)*100);
 
+        
+        // -min for vertical adjnustment
+        score = (int)((((range-(leftarm.y-min))/range)-1)*100);
+        leftROM.push(score);
     }
 
     //right arm activity
-    if(rightarm.y>min){
-        const score = ((((range-(rightarm.y-min))/range)-1)*100);
+    //idk why it is greater but it is...
+    if(rightarm.y<min){
+        score = (int)((((range-(rightarm.y-min))/range)-1)*100);
+        rightROM.push(score);
     }
     
-    console.log(poses[0]);
 }
 
 function modelLoaded() {

@@ -42,7 +42,7 @@ function receivedPoses(poses){
     const leftarm = pose.leftWrist
     const rightarm = pose.rightWrist
 
-    const min = (pose.rightHip.y - pose.rightShoulder.y)/3 + pose.rightShoulder.y;
+    const min = pose.rightElbow.y
 
     const max = pose.rightShoulder.y;
     const range = min-max;

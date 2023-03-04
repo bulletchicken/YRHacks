@@ -38,12 +38,20 @@ function receivedPoses(poses){
     }
 
     //calculate range of motion of arms
-    const leftarm = pose.leftWrist
-    const rightarm = pose.rightWrist
+    const leftknee = pose.leftKnee;
+    const rightknee = pose.rightKnee;
 
-    const min = ((pose.rightHip.y - pose.rightShoulder.y)/3)*2 + pose.rightShoulder.y;
+    //only one leg can be on the floor TT so I will just compare with the static one
+    
+    let min;
+    let max = pose.leftHip.y;
+    if(leftknee.y > rightknee.y){
+        min = leftknee.y;
+    } else{
+        min = rightknee.y;
+    }
 
-    const max = pose.rightShoulder.y;
+    
     const range = min-max;
 
 
@@ -55,18 +63,20 @@ function receivedPoses(poses){
     //same logic, just reverse small and larger
 
 
-    //left arm.y - min is the distance of the arm to the 
-    if(leftarm.y<min){
+    //left leg.y - min is the distance of the arm to the 
+    if(leftknee.y<min){
         //if activity is found, update graph
         console.log('hit');
         // -min for vertical adjnustment
-        const score = ((((range-(leftarm.y-min))/range)-1)*100);
+        const score = ((((range-(leftknee.y-min))/range)-1)*100);
 
     }
 
     //right arm activity
-    if(rightarm.y>min){
-        const score = ((((range-(rightarm.y-min))/range)-1)*100);
+    if(rightknee.y>min){
+
+        console.log('asdlfkjaslkdfj');
+        const score = ((((range-(rightknee.y-min))/range)-1)*100);
     }
     
     console.log(poses[0]);
