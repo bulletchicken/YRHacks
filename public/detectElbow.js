@@ -36,8 +36,9 @@ function receivedPoses(poses){
 
     //calculate range of motion of arms
 
-    const scale = 
+    const scale = Math.abs(pose.rightHip.y - pose.rightShoulder.y);
 
+    
     
     console.log(poses[0]);
 }
