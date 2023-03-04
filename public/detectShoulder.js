@@ -17,7 +17,10 @@ let rightPeak = 0;
 let i = 0;
 let score;
 
-
+function setCookies() {
+    document.cookies = "left="+ leftPeak;
+    document.cookies = "right="+ rightPeak;
+}
 
 function leftScore() {
     if(leftROM[i]>leftPeak){
@@ -82,8 +85,10 @@ function setup() {
 }
 
 
+
 function receivedPoses(poses){
 
+    
     //work here to run functions
     
 

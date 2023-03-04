@@ -2,6 +2,8 @@ const socket = io();
 
 const chatForm = document.getElementById('chat-form')
 const chatMessages = document.querySelector('.chat-messages');
+socket.emit('chatMessage', "You are now messaging your family doctor")
+socket.emit('chatMessage', "Please state your injury so I can assist you");
 // Message from server
 socket.on('message', message => {
     //console.log(message);
