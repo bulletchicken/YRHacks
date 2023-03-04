@@ -1,5 +1,5 @@
-function homepage(){
-    window.location ="homepage.html";
+function index(){
+    window.location ="index.html";
 }
 
 function chat(){
