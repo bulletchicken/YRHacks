@@ -7,5 +7,5 @@ function chat(){
 }
 
 function track(){
-    window.location = "track.html";
+    window.location = "trackerShoulder.html";
 }
