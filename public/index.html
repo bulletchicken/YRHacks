@@ -9,26 +9,34 @@
 </head>
 <body>
 
+    <div class="camera">
+        <div class="circle"></div>
+        <div class="rectangle"></div>
+    </div>
+
     <nav>
         <ul class="nav_links">
             <li><a href="homepage.html" onclick="homepage()">LOGO</a></li>
-            <li><a href="chat.html" onclick="chat()">Chat</a></li>
-            <li><a href="trackerElbow.html" onclick="track()">Track</a></li>
-            <li><a href="trackerLeg.html" onclick="track()">Track</a></li>
-            <li><a href="trackerShoulder.html" onclick="track()">Track</a></li>
-
+            <a href="chat.html" onclick="chat()">Chat</a>
+            <a><div class="dropdown">
+                <a>Trackers</a>
+                <div class="dropdown-links">
+                    <a class="dd" href="trackerLeg.html" onclick="trackLeg()">Leg</a>
+                    <a class="dd" href="trackerElbow.html" onclick="trackElbow()">Elbow</a>
+                    <a class="dd" href="trackerShoulder.html" onclick="trackShoulder()">Shoulder</a>
+                </div>
+            </div></a>
 
         </ul>
     </nav>
 
-        <div class="title">
-            <p>TOGETHER WE</p>
-            <div class="rotating">
-                <span class="words w1">CHAT</span>
-                <span class="words w2">TRACK</span>
-                <span class="words w3">HEAL</span>
-            </div>
-            
+    <div class="title">
+        <p>TOGETHER WE</p>
+        <div class="rotating">
+            <span class="words w1">CHAT</span>
+            <span class="words w2">TRACK</span>
+            <span class="words w3">HEAL</span>
+        </div>     
     </div>
     <script src="./script.js"></script>
 

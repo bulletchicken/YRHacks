@@ -1,29 +1,48 @@
 body{
     background-color:  #f6f0e8;
     height:100vh;
-    display:grid;
-    place-items: center;
+    display:inline-flexbox;
+    border: 50px solid lightgrey;
+    border-radius: 10%;
+}
+
+.circle {
+    height: 20px;
+    width: 20px;
+    background-color: darkgrey;
+    border-radius: 50%;
+  }
+
+.rectangle {
+    height: 20px;
+    width: 100px;
+    background-color: darkgrey;
+    transform: translateX(5px);
+
+}
+
+.camera{
+    display:flex;
+    padding: 10px;
+    transform: translateY(-45px);
+    position:absolute;
+    left:47%;
 }
 
 nav{
     width: 100%;
-    transform: translateY(-75%);
     text-align: right;
+    transform: translateY(-3vh);
 }
 
 .nav_links{
     padding: 20px;
+
 }
 
-.nav_links li{
-    display:inline-block;
+.nav_links a{
     padding: 10px 30px;
     place-items: right;
-    
-
-}
-
-.nav_links li a{
     text-align: right;
     color:black;
     font-size: 200%;
@@ -31,7 +50,7 @@ nav{
     transition: all 0.3s ease 0s;
 }
 
-.nav_links li :hover{
+.nav_links :hover{
     color: white;
 }
 
@@ -42,7 +61,7 @@ nav{
     font-size: 300%;
     display:flex;
     place-items: center;
-
+    transform: translateX(35vw) translateY(20vh);
 }
 
 .rotating{
@@ -83,4 +102,29 @@ span{
     75%{
         transform: translateY(-200%);
     }
+}
+
+.dropdown{
+    float: right;
+    transform: translateX(-50%);
+    /*overflow: hidden;*/
+}
+
+.dropdown-links {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-links {
+    display: block;
+    transform: translateX(50%);
+    background: #f9f9f9;
+}
+
+.dd{
+    display:flex;
 }
