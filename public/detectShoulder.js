@@ -38,15 +38,12 @@ function receivedPoses(poses){
     }
 
     //calculate range of motion of arms
-
-    const scale = 500/(pose.rightHip.y - pose.rightShoulder.y);
-
+    
     const leftarm = pose.leftWrist
     const rightarm = pose.rightWrist
 
     const min = ((pose.rightHip.y - pose.rightShoulder.y)/3)*2 + pose.rightShoulder.y;
-    console.log(min);
-    console.log(leftarm.y);
+
     const max = pose.rightShoulder.y;
     const range = min-max;
 
@@ -63,12 +60,14 @@ function receivedPoses(poses){
     if(leftarm.y<min){
         //if activity is found, update graph
         console.log('hit');
-        console.log((range-(leftarm.y-min)));
+        // -min for vertical adjnustment
+        const score = ((((range-(leftarm.y-min))/range)-1)*100);
+
     }
 
     //right arm activity
     if(rightarm.y>min){
-
+        const score = ((((range-(rightarm.y-min))/range)-1)*100);
     }
     
     console.log(poses[0]);
