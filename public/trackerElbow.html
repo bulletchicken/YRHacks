@@ -21,7 +21,13 @@
     <nav>
         <ul class="nav_links">
             <a href="index.html" onclick="homepage()">LOGO</a>
-            <a href="chat.html" onclick="chat()">Chat</a>
+            <a><div class="dropdown">
+                <a>Chat</a>
+                <div class="dropdown-links">
+                    <a class="dd" href="chat.html" onclick="chat()">AI</a>
+                    <a class="dd" href="chat.html" onclick="trackElbow()">Doctor</a>
+                </div>
+            </div></a>
             <a><div class="dropdown">
                 <a>Trackers</a>
                 <div class="dropdown-links">
