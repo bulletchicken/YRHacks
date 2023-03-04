@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shoulder Tracker</title>
     <link rel = "stylesheet" href = "stylesheet.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </head>
 <body>
+    
+    
     <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
-    <script src="detectShoulder.js"></script>
-
+    
+   
     <div class="camera">
         <div class="circle"></div>
         <div class="camon_circle"></div>
@@ -39,5 +42,7 @@
 
         </ul>
     </nav>
+    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+    <script src="detectShoulder.js"></script>
 </body>
 </html>
