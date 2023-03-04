@@ -34,11 +34,11 @@ function receivedPoses(poses){
         skeleton = poses[0].skeleton;
     }
 
-    //calculate range of motion
+    //calculate range of motion of arms
+
+    const scale = 
 
     
-
-    //const scale = Math.abs(pose.leftShoulder.x-pose.leftElbow.y)
     console.log(poses[0]);
 }
 
