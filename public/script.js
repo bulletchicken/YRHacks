@@ -2,8 +2,12 @@ function index(){
     window.location ="index.html";
 }
 
-function chat(){
-    window.location = "chat.html";
+function doctorchat(){
+    window.location = "doctorchat.html";
+}
+
+function aichat(){
+    window.location = "aichat.html";
 }
 
 function trackElbow(){

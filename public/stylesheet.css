@@ -14,6 +14,8 @@ body{
     border-radius: 10%;
 }
 
+/* FAKE CAMERA */
+
 .circle {
     height: 20px;
     width: 20px;
@@ -44,6 +46,8 @@ body{
     position:absolute;
     left:47%;
 }
+
+/* NAVBAR */
 
 nav{
     width: 100%;
@@ -94,6 +98,8 @@ nav{
 .nav_links a:hover::before{
     width:100%;
 }
+
+/* ROTATING TITLE */
 
 .title{
     font-family: Nunito;
@@ -147,6 +153,8 @@ span{
     }
 }
 
+/* DROPDOWN MENU */
+
 .dropdown{
     float: right;
     transform: translateX(-50%);
@@ -172,6 +180,8 @@ span{
 .dd{
     display:flex;
 }
+
+/* FLOATING ICONS */
 
 .floaters{
     position:absolute;
