@@ -17,9 +17,12 @@ let rightPeak = 0;
 let i = 0;
 let score;
 
+
+
 function leftScore() {
     if(leftROM[i]>leftPeak){
         leftPeak = leftROM[i];
+        document.getElementById('high').innerHTML = leftPeak;
     }
     i+=2;
     console.log(leftPeak);
@@ -30,20 +33,14 @@ function leftScore() {
 function rightScore() {
     if(rightROM[i]>rightPeak){
         rightPeak = rightROM[i];
+        document.getElementById('high').innerHTML = rightPeak;
     }
-    i++;
+    i+=2;
     return rightROM[i];
    
 }
 
-/*
-Plotly.plot('chart', [{
-    y: [leftScore()],
-    type: 'line',
 
-}]);
-
-*/
 Plotly.plot('chart', [{
     y: [rightScore()],
     type: 'line',
